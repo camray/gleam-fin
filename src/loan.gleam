@@ -71,17 +71,17 @@ pub fn amortization_schedule(loan: Loan) -> Result(List(ScheduleItem), Nil) {
 pub fn total_interest_paid(loan: Loan) -> Int {
   let schedule = amortization_schedule(loan)
   let unwrapped_schedule = result.unwrap(schedule, [])
-  schedule_total_interest_paid(unwrapped_schedule)
+  list.fold(unwrapped_schedule, 0, fn(total, item) {
+    total + item.interest_payment
+  })
 }
 
-pub fn schedule_total_interest_paid(schedule: List(ScheduleItem)) -> Int {
-  list.fold(
-    schedule,
-    0,
-    fn(total, item) {
-       total + item.interest_payment
-    },
-  )
+pub fn total_paid(loan: Loan) -> Int {
+  let schedule = amortization_schedule(loan)
+  let unwrapped_schedule = result.unwrap(schedule, [])
+  list.fold(unwrapped_schedule, 0, fn(total, item) {
+    total + item.payment_amount
+  })
 }
 
 fn internal_amortization_schedule(

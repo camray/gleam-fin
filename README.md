@@ -27,6 +27,9 @@ pub fn main() {
   let interest_payment = loan.interest_payment(loan)
   io.debug(interest_payment)
 
+  let total_paid = loan.total_paid(loan)
+  io.debug(total_paid)
+
   let total_interest = loan.total_interest_paid(loan)
   io.debug(total_interest)
 
