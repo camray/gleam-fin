@@ -10,7 +10,28 @@ gleam add gleam_loan@1
 import gleam_loan
 
 pub fn main() {
-  // TODO: An example of the project in use
+  let loan =
+    gleam_loan.Loan(
+      initial_principal: 3_000_000,
+      remaining_principal: 3_000_000,
+      interest: 0.03,
+      term: 360,
+      period: 12,
+    )
+  let amortization_schedule = gleam_loan.amortization_schedule(loan)
+  io.debug(amortization_schedule)
+
+  let amortized_payment = gleam_loan.amortized_payment(loan)
+  io.debug(amortized_payment)
+
+  let interest_payment = gleam_loan.interest_payment(loan)
+  io.debug(interest_payment)
+
+  io.debug(loan.initial_principal)
+  io.debug(loan.remaining_principal)
+  io.debug(loan.interest)
+  io.debug(loan.term)
+  io.debug(loan.period)
 }
 ```
 

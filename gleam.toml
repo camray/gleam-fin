@@ -1,5 +1,5 @@
 name = "gleam_loan"
-version = "1.0.1"
+version = "1.0.2"
 repository = { type = "github", user = "camray", repo = "gleam-fin" }
 description = "Some basic loan calculation tools"
 licences = ["Apache-2.0"]
