@@ -57,3 +57,16 @@ pub fn amortization_schedule_test() {
   should.equal(last_payment.interest_payment, 32)
   should.equal(last_payment.remaining_principal, 72)
 }
+
+pub fn total_interest_paid_test() {
+  let loan = loan.Loan(3_000_000, 3_000_000, 0.03, 360, 12)
+  loan.total_interest_paid(loan)
+  |> should.equal(1553352)
+}
+
+pub fn schedule_total_interest_paid_test() {
+  let loan = loan.Loan(3_000_000, 3_000_000, 0.03, 360, 12)
+  let schedule = result.unwrap(loan.amortization_schedule(loan), [])
+  loan.schedule_total_interest_paid(schedule)
+  |> should.equal(1553352)
+}

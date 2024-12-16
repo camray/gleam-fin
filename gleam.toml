@@ -1,7 +1,7 @@
-name = "gleam_loan"
-version = "1.0.2"
-repository = { type = "github", user = "camray", repo = "gleam-fin" }
-description = "Some basic loan calculation tools"
+name = "loan"
+version = "1.0.1"
+repository = { type = "github", user = "camray", repo = "gleam-loan" }
+description = "Loan calculation tools"
 licences = ["Apache-2.0"]
 
 # Fill out these fields if you intend to generate HTML documentation or publish
