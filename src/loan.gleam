@@ -68,6 +68,7 @@ pub fn amortization_schedule(loan: Loan) -> Result(List(ScheduleItem), Nil) {
   Ok(list.reverse(schedule))
 }
 
+/// Calculate the total interest paid over the life of a loan in cents
 pub fn total_interest_paid(loan: Loan) -> Int {
   let schedule = amortization_schedule(loan)
   let unwrapped_schedule = result.unwrap(schedule, [])
@@ -76,6 +77,8 @@ pub fn total_interest_paid(loan: Loan) -> Int {
   })
 }
 
+/// Calculate the total amount paid over the life of a loan in cents
+/// including principal and interest
 pub fn total_paid(loan: Loan) -> Int {
   let schedule = amortization_schedule(loan)
   let unwrapped_schedule = result.unwrap(schedule, [])
