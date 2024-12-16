@@ -2,7 +2,7 @@ import gleam/list
 import gleam/result
 import gleeunit
 import gleeunit/should
-import loan/loan
+import loan
 
 pub fn main() {
   gleeunit.main()

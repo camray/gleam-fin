@@ -95,7 +95,10 @@ fn internal_amortization_schedule(
           remaining_principal:,
         )
 
-      internal_amortization_schedule(new_loan, [new_schedule_item, ..amortization])
+      internal_amortization_schedule(new_loan, [
+        new_schedule_item,
+        ..amortization
+      ])
     }
     False -> Ok(amortization)
   }
